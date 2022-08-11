@@ -3,21 +3,21 @@
 
 def part_one(data):
     location = [0, 0]
-    counter = {'00': True}
+    counter = {'0,0': True}
     for dir in data:
         update(location, dir)
-        counter[f'{location[0]}{location[1]}'] = True
+        counter[f'{location[0]},{location[1]}'] = True
     return len(counter)
 
 
 def part_two(data):
     santa = [0, 0]
     robot = [0, 0]
-    counter = {'00': True}
+    counter = {'0,0': True}
     for idx, dir in enumerate(data):
         location = robot if idx % 2 else santa
         update(location, dir)
-        counter[f'{location[0]}{location[1]}'] = True
+        counter[f'{location[0]},{location[1]}'] = True
     return len(counter)
 
 
